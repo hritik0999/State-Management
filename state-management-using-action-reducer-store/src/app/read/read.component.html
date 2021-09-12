@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="flex-container" *ngIf="tutorials" >
+
+    <div class="flex-item"><h3>Tutorials</h3></div>
+    <div class="flex-item">    
+        <ul>
+    
+        <li  (click)="deleteTutorial(i)" *ngFor="let tutorial of tutorials | async; let i=index" >
+        
+        <a  [href]="tutorial.url">{{ tutorial.name }}</a><p>*will be removed as soon as we click this link but for that first add a name and url*</p>
+        
+        </li>
+        
+        </ul>
+    </div>
+    </div>
+</body>
+</html>
